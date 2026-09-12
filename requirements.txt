@@ -1,0 +1,2 @@
+# No external packages required — uses Python's built-in http.server.
+# Python 3.8+ recommended.

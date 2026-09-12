@@ -1,0 +1,568 @@
+     <!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="A&T Auto Services — trusted mechanic in Somerton VIC. Log book servicing, brakes, tyres, mechanical repairs & roadworthy certificates. Call 0402 807 082.">
+  <title>A&T Auto Services | Mechanic Somerton VIC</title>
+  <link rel="icon" type="image/png" href="images/logo.png">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+  <!-- Top Bar -->
+  <div class="top-bar">
+    <div class="container top-bar__inner">
+      <span class="top-bar__hours">Mon–Fri 8:30am – 6:00pm · Sat 10:00am – 4:00pm</span>
+      <a href="tel:0402807082" class="top-bar__phone">
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M6.62 10.79a15.05 15.05 0 006.59 6.59l2.2-2.2a1 1 0 011.01-.24 11.36 11.36 0 003.56.57 1 1 0 011 1V20a1 1 0 01-1 1A17 17 0 013 4a1 1 0 011-1h3.5a1 1 0 011 1 11.36 11.36 0 00.57 3.56 1 1 0 01-.25 1.01l-2.2 2.22z"/></svg>
+        0402 807 082
+      </a>
+    </div>
+  </div>
+
+  <!-- Header -->
+  <header class="header" id="header">
+    <div class="container header__inner">
+      <a href="#" class="header__logo">
+        <img src="images/logo.png" alt="A&T Auto Services logo" width="60" height="60">
+        <div class="header__logo-text">
+          <span class="header__logo-name">A&T Auto Services</span>
+          <span class="header__logo-tagline">We maintain you drive</span>
+        </div>
+      </a>
+      <nav class="nav" id="nav">
+        <a href="#services" class="nav__link">Services</a>
+        <a href="#about" class="nav__link">About</a>
+        <a href="#gallery" class="nav__link">Gallery</a>
+        <a href="#pricing" class="nav__link">Pricing</a>
+        <a href="#contact" class="nav__link">Contact</a>
+        <a href="#quote" class="btn btn--primary nav__cta">Get a Free Quote</a>
+      </nav>
+      <button class="hamburger" id="hamburger" aria-label="Toggle menu">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+  </header>
+
+  <!-- Hero -->
+  <section class="hero">
+    <div class="hero__bg">
+      <img src="images/shop-exterior.png" alt="A&T Auto Services workshop in Somerton" loading="eager">
+      <div class="hero__overlay"></div>
+    </div>
+    <div class="container hero__content">
+      <div class="hero__badges">
+        <span class="badge">Somerton, Melbourne</span>
+        <span class="badge">All Makes & Models</span>
+        <span class="badge">12-Month Warranty</span>
+      </div>
+      <h1 class="hero__title">Your Trusted Local Mechanic in <span class="text-gold">Somerton</span></h1>
+      <p class="hero__subtitle">Professional automotive service &amp; repairs at 8 Freight Dr, Somerton. Honest advice, fair prices, and quality workmanship — every time.</p>
+      <div class="hero__actions">
+        <a href="tel:0402807082" class="btn btn--primary btn--lg">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor"><path d="M6.62 10.79a15.05 15.05 0 006.59 6.59l2.2-2.2a1 1 0 011.01-.24 11.36 11.36 0 003.56.57 1 1 0 011 1V20a1 1 0 01-1 1A17 17 0 013 4a1 1 0 011-1h3.5a1 1 0 011 1 11.36 11.36 0 00.57 3.56 1 1 0 01-.25 1.01l-2.2 2.22z"/></svg>
+          Call 0402 807 082
+        </a>
+        <a href="#quote" class="btn btn--outline btn--lg">Get a Free Quote</a>
+      </div>
+      <div class="hero__features">
+        <div class="hero__feature">
+          <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 11.08V12a10 10 0 11-5.93-9.14"/><polyline points="22 4 12 14.01 9 11.01"/></svg>
+          Quality Service
+        </div>
+        <div class="hero__feature">
+          <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 11.08V12a10 10 0 11-5.93-9.14"/><polyline points="22 4 12 14.01 9 11.01"/></svg>
+          Affordable Prices
+        </div>
+        <div class="hero__feature">
+          <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 11.08V12a10 10 0 11-5.93-9.14"/><polyline points="22 4 12 14.01 9 11.01"/></svg>
+          Fast Turnaround
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Quote Form -->
+  <section class="quote-bar" id="quote">
+    <div class="container">
+      <div class="quote-bar__inner">
+        <div class="quote-bar__text">
+          <h2>Get a Free Quote</h2>
+          <p>We get back to you <strong>fast!</strong></p>
+        </div>
+        <form class="quote-form" id="quoteForm">
+          <input type="text" name="name" placeholder="Your Name" required>
+          <input type="tel" name="phone" placeholder="Phone Number" required>
+          <input type="email" name="email" placeholder="Email Address">
+          <select name="service" required>
+            <option value="" disabled selected>Select a Service</option>
+            <option>Log Book Service</option>
+            <option>Brakes</option>
+            <option>Wheels & Tyres</option>
+            <option>Air Conditioning</option>
+            <option>Suspension</option>
+            <option>Electrical</option>
+            <option>Mechanical Repair</option>
+            <option>Roadworthy</option>
+          </select>
+          <button type="submit" class="btn btn--primary">Send Request</button>
+        </form>
+      </div>
+    </div>
+  </section>
+
+  <!-- Services -->
+  <section class="section" id="services">
+    <div class="container">
+      <div class="section__header">
+        <span class="section__label">What We Do</span>
+        <h2 class="section__title">Automotive Services &amp; Repairs</h2>
+        <p class="section__desc">We've got the services you need — from routine log book servicing to complex mechanical repairs.</p>
+      </div>
+      <div class="services-grid">
+        <div class="service-card">
+          <div class="service-card__icon">
+            <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M14.7 6.3a1 1 0 000 1.4l1.6 1.6a1 1 0 001.4 0l3.77-3.77a6 6 0 01-7.94 7.94l-6.91 6.91a2.12 2.12 0 01-3-3l6.91-6.91a6 6 0 017.94-7.94l-3.76 3.76z"/></svg>
+          </div>
+          <h3>Log Book Service</h3>
+          <p>Manufacturer-spec servicing to keep your warranty valid and your car running at its best.</p>
+        </div>
+        <div class="service-card">
+          <div class="service-card__icon">
+            <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><circle cx="12" cy="12" r="10"/><circle cx="12" cy="12" r="3"/></svg>
+          </div>
+          <h3>Brakes</h3>
+          <p>Full brake inspections, pad replacements, rotor machining, and fluid checks for safe stopping.</p>
+        </div>
+        <div class="service-card">
+          <div class="service-card__icon">
+            <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><circle cx="12" cy="12" r="10"/><path d="M12 6v6l4 2"/></svg>
+          </div>
+          <h3>Tyres & Wheels</h3>
+          <p>Tyre fitting, rotation, balancing, and wheel alignment for a smooth, safe ride.</p>
+        </div>
+        <div class="service-card">
+          <div class="service-card__icon">
+            <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M12 2v4m0 12v4M4.93 4.93l2.83 2.83m8.48 8.48l2.83 2.83M2 12h4m12 0h4M4.93 19.07l2.83-2.83m8.48-8.48l2.83-2.83"/></svg>
+          </div>
+          <h3>Air Conditioning</h3>
+          <p>Re-gas, leak detection, and full A/C system repairs to keep you cool all year round.</p>
+        </div>
+        <div class="service-card">
+          <div class="service-card__icon">
+            <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
+          </div>
+          <h3>Suspension & Shocks</h3>
+          <p>Shock absorbers, struts, tie rods, and steering components inspected and repaired.</p>
+        </div>
+        <div class="service-card">
+          <div class="service-card__icon">
+            <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M13 2L3 14h9l-1 8 10-12h-9l1-8z"/></svg>
+          </div>
+          <h3>Electrical & Diagnostics</h3>
+          <p>Advanced diagnostic scanning, battery testing, and auto electrical fault finding.</p>
+        </div>
+        <div class="service-card">
+          <div class="service-card__icon">
+            <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><rect x="2" y="6" width="20" height="12" rx="2"/><path d="M6 12h4m4 0h4"/></svg>
+          </div>
+          <h3>Mechanical Repairs</h3>
+          <p>Engine, transmission, clutch, timing belts, and drivetrain repairs done right.</p>
+        </div>
+        <div class="service-card">
+          <div class="service-card__icon">
+            <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M9 11l3 3L22 4"/><path d="M21 12v7a2 2 0 01-2 2H5a2 2 0 01-2-2V5a2 2 0 012-2h11"/></svg>
+          </div>
+          <h3>Roadworthy Certificate</h3>
+          <p>Licensed vehicle testing for roadworthy certificates — quick, thorough, and hassle-free.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- About / Why Choose Us -->
+  <section class="section section--dark" id="about">
+    <div class="container">
+      <div class="about-grid">
+        <div class="about-grid__image">
+          <img src="images/team-full.png" alt="A&T Auto Services team at the Somerton workshop" loading="lazy">
+          <div class="about-grid__badge">
+            <span class="about-grid__badge-num">15+</span>
+            <span class="about-grid__badge-text">Years Experience</span>
+          </div>
+        </div>
+        <div class="about-grid__content">
+          <span class="section__label">Why Choose Us</span>
+          <h2 class="section__title">Your Engine Is In Good Hands</h2>
+          <p>Located at 8 Freight Dr, Somerton, A&T Auto Services is your go-to mechanic shop for exceptional service and competitive pricing. We guarantee customer satisfaction with no hidden costs, offering a full range of services to meet all your automotive needs.</p>
+          <p>Our experienced team is dedicated to providing the precise service you're looking for — reliable, transparent, and high-quality automotive care for every make and model.</p>
+          <div class="features-list">
+            <div class="features-list__item">
+              <div class="features-list__icon">
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 11.08V12a10 10 0 11-5.93-9.14"/><polyline points="22 4 12 14.01 9 11.01"/></svg>
+              </div>
+              <div>
+                <strong>100% Customer Satisfaction</strong>
+                <p>We stand behind every job we do.</p>
+              </div>
+            </div>
+            <div class="features-list__item">
+              <div class="features-list__icon">
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 11.08V12a10 10 0 11-5.93-9.14"/><polyline points="22 4 12 14.01 9 11.01"/></svg>
+              </div>
+              <div>
+                <strong>No Hidden Costs — Upfront Prices</strong>
+                <p>Honest quotes before any work starts.</p>
+              </div>
+            </div>
+            <div class="features-list__item">
+              <div class="features-list__icon">
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 11.08V12a10 10 0 11-5.93-9.14"/><polyline points="22 4 12 14.01 9 11.01"/></svg>
+              </div>
+              <div>
+                <strong>Parts & Labour Warranty</strong>
+                <p>12-month warranty on parts and labour.</p>
+              </div>
+            </div>
+            <div class="features-list__item">
+              <div class="features-list__icon">
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 11.08V12a10 10 0 11-5.93-9.14"/><polyline points="22 4 12 14.01 9 11.01"/></svg>
+              </div>
+              <div>
+                <strong>Quality Workmanship</strong>
+                <p>Skilled mechanics using quality parts.</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Stats -->
+  <section class="stats">
+    <div class="container">
+      <div class="stats__header">
+        <h2>Our Dedication &amp; Experience Stands Second to None!</h2>
+        <p>Every day we are dedicated to delivering exceptional service with customer satisfaction and transparency.</p>
+      </div>
+      <div class="stats__grid">
+        <div class="stat">
+          <span class="stat__number" data-target="2500">0</span>
+          <span class="stat__label">Cars Repaired</span>
+        </div>
+        <div class="stat">
+          <span class="stat__number" data-target="5000">0</span>
+          <span class="stat__label">Serviced</span>
+        </div>
+        <div class="stat">
+          <span class="stat__number" data-target="95">0</span>
+          <span class="stat__suffix">%</span>
+          <span class="stat__label">Return Clients</span>
+        </div>
+        <div class="stat">
+          <span class="stat__number" data-target="15">0</span>
+          <span class="stat__suffix">+</span>
+          <span class="stat__label">Years Experience</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Gallery -->
+  <section class="section" id="gallery">
+    <div class="container">
+      <div class="section__header">
+        <span class="section__label">Our Workshop</span>
+        <h2 class="section__title">What We Do</h2>
+        <p class="section__desc">Take a look inside our fully equipped Somerton workshop.</p>
+      </div>
+      <div class="gallery-grid">
+        <div class="gallery-grid__item gallery-grid__item--large">
+          <img src="images/shop-exterior.png" alt="A&T Auto Services shop exterior at Somerton" loading="lazy">
+        </div>
+        <div class="gallery-grid__item">
+          <img src="images/team-full.png" alt="A&T Auto Services full team" loading="lazy">
+        </div>
+        <div class="gallery-grid__item">
+          <img src="images/team-three.png" alt="A&T Auto Services team members" loading="lazy">
+        </div>
+        <div class="gallery-grid__item">
+          <img src="images/workshop-wide.png" alt="A&T Auto Services workshop with multiple vehicles on lifts" loading="lazy">
+        </div>
+        <div class="gallery-grid__item">
+          <img src="images/mechanic-brakes.png" alt="Mechanic working on brake assembly" loading="lazy">
+        </div>
+        <div class="gallery-grid__item">
+          <img src="images/mechanic-engine.png" alt="Mechanic servicing a Lexus engine" loading="lazy">
+        </div>
+        <div class="gallery-grid__item">
+          <img src="images/reception.png" alt="A&T Auto Services reception area" loading="lazy">
+        </div>
+        <div class="gallery-grid__item">
+          <img src="images/team.png" alt="A&T Auto Services team in branded hoodies" loading="lazy">
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Pricing -->
+  <section class="section section--dark" id="pricing">
+    <div class="container">
+      <div class="section__header">
+        <span class="section__label">Service Plans</span>
+        <h2 class="section__title">All Day Everyday Low Prices!</h2>
+        <p class="section__desc">Transparent pricing with no surprises. Book your service today.</p>
+      </div>
+      <div class="pricing-grid">
+        <div class="pricing-card">
+          <h3>Safety Check</h3>
+          <div class="pricing-card__price">
+            <span class="pricing-card__from">from</span>
+            <span class="pricing-card__amount">$199</span>
+          </div>
+          <ul class="pricing-card__features">
+            <li>Engine Health Check</li>
+            <li>Electrical Check</li>
+            <li>History Report</li>
+            <li>Brake Check</li>
+            <li>Test Drive</li>
+          </ul>
+          <a href="#quote" class="btn btn--outline btn--block">Book Now</a>
+        </div>
+        <div class="pricing-card pricing-card--featured">
+          <div class="pricing-card__badge">Most Popular</div>
+          <h3>Minor Service</h3>
+          <div class="pricing-card__price">
+            <span class="pricing-card__from">from</span>
+            <span class="pricing-card__amount">$299</span>
+          </div>
+          <ul class="pricing-card__features">
+            <li>Oil Change</li>
+            <li>Oil Filter</li>
+            <li>Fluid Top-Up</li>
+            <li>Tyre Pressure</li>
+            <li>+ Safety Check</li>
+          </ul>
+          <a href="#quote" class="btn btn--primary btn--block">Book Now</a>
+        </div>
+        <div class="pricing-card">
+          <h3>Major Service</h3>
+          <div class="pricing-card__price">
+            <span class="pricing-card__from">from</span>
+            <span class="pricing-card__amount">$799</span>
+          </div>
+          <ul class="pricing-card__features">
+            <li>Minor Service +</li>
+            <li>Transmission Service</li>
+            <li>Spark Plugs</li>
+            <li>Air Filter</li>
+            <li>+ Safety Check</li>
+          </ul>
+          <a href="#quote" class="btn btn--outline btn--block">Book Now</a>
+        </div>
+        <div class="pricing-card">
+          <h3>Engine Repairs</h3>
+          <div class="pricing-card__price">
+            <span class="pricing-card__amount pricing-card__amount--quote">Get a Quote</span>
+          </div>
+          <ul class="pricing-card__features">
+            <li>Engine Repairs</li>
+            <li>Transmission Repairs</li>
+            <li>Timing Belts</li>
+            <li>Drivetrains</li>
+            <li>+ Much More!</li>
+          </ul>
+          <a href="#quote" class="btn btn--outline btn--block">Ask for Price</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- How to Book -->
+  <section class="section">
+    <div class="container">
+      <div class="section__header">
+        <span class="section__label">Easy Booking</span>
+        <h2 class="section__title">3 Easy Steps to Book Your Car In</h2>
+      </div>
+      <div class="steps-grid">
+        <div class="step">
+          <div class="step__number">1</div>
+          <h3>Call or Fill Out the Form</h3>
+          <p>Reach us at <a href="tel:0402807082">0402 807 082</a>, <a href="https://wa.me/61402807082?text=Hi%2C%20I%27d%20like%20to%20enquire%20about%20a%20service." target="_blank" rel="noopener">WhatsApp</a>, or submit a free quote request online.</p>
+        </div>
+        <div class="step">
+          <div class="step__number">2</div>
+          <h3>Drop Off Your Vehicle</h3>
+          <p>Bring your car to 8 Freight Dr, Somerton. We'll inspect and confirm the work needed.</p>
+        </div>
+        <div class="step">
+          <div class="step__number">3</div>
+          <h3>Pick Up & Drive</h3>
+          <p>We complete the service, give you a full report, and you're back on the road.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Areas Served -->
+  <section class="section section--dark">
+    <div class="container">
+      <div class="section__header">
+        <span class="section__label">Service Areas</span>
+        <h2 class="section__title">Areas We Serve</h2>
+        <p class="section__desc">Proudly serving Somerton and surrounding northern Melbourne suburbs.</p>
+      </div>
+      <div class="areas-grid">
+        <span>Somerton</span><span>Campbellfield</span><span>Craigieburn</span><span>Broadmeadows</span>
+        <span>Coolaroo</span><span>Meadow Heights</span><span>Roxburgh Park</span><span>Greenvale</span>
+        <span>Mickleham</span><span>Donnybrook</span><span>Kalkallo</span><span>Wallan</span>
+        <span>Epping</span><span>Thomastown</span><span>Lalor</span><span>Mill Park</span>
+        <span>Bundoora</span><span>Reservoir</span><span>Fawkner</span><span>Glenroy</span>
+      </div>
+    </div>
+  </section>
+
+  <!-- Contact -->
+  <section class="section" id="contact">
+    <div class="container">
+      <div class="contact-grid">
+        <div class="contact-grid__info">
+          <span class="section__label">Find Us</span>
+          <h2 class="section__title">Visit Our Workshop</h2>
+          <p>We're easy to find in Somerton, just off the Hume Freeway.</p>
+          <div class="contact-details">
+            <div class="contact-details__item">
+              <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0118 0z"/><circle cx="12" cy="10" r="3"/></svg>
+              <div>
+                <strong>Address</strong>
+                <p>8 Freight Dr, Somerton VIC 3062</p>
+              </div>
+            </div>
+            <div class="contact-details__item">
+              <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07 19.5 19.5 0 01-6-6 19.79 19.79 0 01-3.07-8.67A2 2 0 014.11 2h3a2 2 0 012 1.72c.127.96.361 1.903.7 2.81a2 2 0 01-.45 2.11L8.09 9.91a16 16 0 006 6l1.27-1.27a2 2 0 012.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0122 16.92z"/></svg>
+              <div>
+                <strong>Phone</strong>
+                <p><a href="tel:0402807082">0402 807 082</a></p>
+              </div>
+            </div>
+            <div class="contact-details__item contact-details__item--whatsapp">
+              <svg width="24" height="24" viewBox="0 0 24 24" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.435 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
+              <div>
+                <strong>WhatsApp</strong>
+                <p><a href="https://wa.me/61402807082?text=Hi%2C%20I%27d%20like%20to%20enquire%20about%20a%20service." target="_blank" rel="noopener">Message us on WhatsApp</a></p>
+              </div>
+            </div>
+            <div class="contact-details__item">
+              <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
+              <div>
+                <strong>Hours</strong>
+                <p>Mon – Fri: 8:30am – 6:00pm<br>Saturday: 10:00am – 4:00pm<br>Sunday: Closed</p>
+              </div>
+            </div>
+          </div>
+          <a href="https://maps.google.com/?q=8+Freight+Dr,+Somerton+VIC+3062" target="_blank" rel="noopener" class="btn btn--primary">Get Directions</a>
+        </div>
+        <div class="contact-grid__map">
+          <iframe
+            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3154.5!2d144.9528!3d-37.6456!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x6ad65d5e8b8b8b8b%3A0x0!2s8%20Freight%20Dr%2C%20Somerton%20VIC%203062!5e0!3m2!1sen!2sau!4v1700000000000!5m2!1sen!2sau"
+            width="100%"
+            height="100%"
+            style="border:0;"
+            allowfullscreen=""
+            loading="lazy"
+            referrerpolicy="no-referrer-when-downgrade"
+            title="A&T Auto Services location on Google Maps">
+          </iframe>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA Banner -->
+  <section class="cta-banner">
+    <div class="container cta-banner__inner">
+      <div>
+        <h2>Need a Mechanic? We're Open Mon–Fri 8:30am – 6:00pm · Sat 10:00am – 4:00pm</h2>
+        <p>Delivering expert automotive care with precision, integrity, and unmatched service.</p>
+      </div>
+      <div class="cta-banner__actions">
+        <a href="tel:0402807082" class="btn btn--primary btn--lg">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor"><path d="M6.62 10.79a15.05 15.05 0 006.59 6.59l2.2-2.2a1 1 0 011.01-.24 11.36 11.36 0 003.56.57 1 1 0 011 1V20a1 1 0 01-1 1A17 17 0 013 4a1 1 0 011-1h3.5a1 1 0 011 1 11.36 11.36 0 00.57 3.56 1 1 0 01-.25 1.01l-2.2 2.22z"/></svg>
+          Call 0402 807 082
+        </a>
+        <a href="https://wa.me/61402807082?text=Hi%2C%20I%27d%20like%20to%20enquire%20about%20a%20service." target="_blank" rel="noopener" class="btn btn--whatsapp btn--lg">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.435 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
+          WhatsApp
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="footer">
+    <div class="container">
+      <div class="footer__grid">
+        <div class="footer__brand">
+          <img src="images/logo.png" alt="A&T Auto Services" width="72" height="72">
+          <p class="footer__tagline">We maintain you drive</p>
+          <p>Your trusted local mechanic in Somerton. Honest work, fair prices, and quality service.</p>
+        </div>
+        <div>
+          <h4>Menu</h4>
+          <ul class="footer__links">
+            <li><a href="#">Home</a></li>
+            <li><a href="#about">About Us</a></li>
+            <li><a href="#gallery">Gallery</a></li>
+            <li><a href="#contact">Contact Us</a></li>
+            <li><a href="#quote">Get a Quote</a></li>
+          </ul>
+        </div>
+        <div>
+          <h4>Services</h4>
+          <ul class="footer__links">
+            <li><a href="#services">Log Book Servicing</a></li>
+            <li><a href="#services">Brakes</a></li>
+            <li><a href="#services">Wheels & Tyres</a></li>
+            <li><a href="#services">Air Conditioning</a></li>
+            <li><a href="#services">Suspension & Shocks</a></li>
+            <li><a href="#services">Electrical Repairs</a></li>
+            <li><a href="#services">Mechanical Repairs</a></li>
+          </ul>
+        </div>
+        <div>
+          <h4>Contact</h4>
+          <ul class="footer__links">
+            <li>8 Freight Dr, Somerton VIC 3062</li>
+            <li><a href="tel:0402807082">0402 807 082</a></li>
+            <li><a href="https://wa.me/61402807082?text=Hi%2C%20I%27d%20like%20to%20enquire%20about%20a%20service." target="_blank" rel="noopener">WhatsApp Us</a></li>
+            <li>Mon–Fri: 8:30am – 6:00pm</li>
+            <li>Sat: 10:00am – 4:00pm</li>
+            <li>Sunday: Closed</li>
+          </ul>
+        </div>
+      </div>
+      <div class="footer__bottom">
+        <p>&copy; 2026 A&T Auto Services. All rights reserved.</p>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Floating Contact Buttons -->
+  <div class="floating-buttons">
+    <a href="https://wa.me/61402807082?text=Hi%2C%20I%27d%20like%20to%20enquire%20about%20a%20service." target="_blank" rel="noopener" class="floating-btn floating-btn--whatsapp" aria-label="Chat on WhatsApp">
+      <svg width="24" height="24" viewBox="0 0 24 24" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.435 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
+    </a>
+    <a href="tel:0402807082" class="floating-btn floating-btn--call" aria-label="Call us">
+      <svg width="24" height="24" viewBox="0 0 24 24" fill="currentColor"><path d="M6.62 10.79a15.05 15.05 0 006.59 6.59l2.2-2.2a1 1 0 011.01-.24 11.36 11.36 0 003.56.57 1 1 0 011 1V20a1 1 0 01-1 1A17 17 0 013 4a1 1 0 011-1h3.5a1 1 0 011 1 11.36 11.36 0 00.57 3.56 1 1 0 01-.25 1.01l-2.2 2.22z"/></svg>
+    </a>
+  </div>
+
+  <script src="js/main.js"></script>
+</body>
+</html>
