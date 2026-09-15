@@ -1,0 +1,7 @@
+services:
+  at-autoservices:
+    build: .
+    container_name: at-autoservices
+    restart: unless-stopped
+    ports:
+      - "80:80"

@@ -13,3 +13,6 @@ Thumbs.db
 # Local / temp
 *.log
 *.tmp
+
+# Do not include other projects
+Car_Rental/
