@@ -9,7 +9,7 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="css/style.css?v=4">
+  <link rel="stylesheet" href="css/style.css?v=5">
 </head>
 <body>
 
@@ -86,7 +86,7 @@
         <form class="quote-form" id="quoteForm">
           <div class="quote-form__fields">
             <input type="text" name="name" placeholder="Your Name" required>
-            <input type="tel" name="phone" placeholder="Phone Number" required>
+            <input type="tel" name="phone" placeholder="Phone Number">
             <input type="email" name="email" placeholder="Email Address">
             <select name="service" required>
               <option value="" disabled selected>Select a Service</option>
@@ -100,6 +100,7 @@
               <option>Roadworthy</option>
             </select>
           </div>
+          <p class="quote-form__hint">Phone or email is enough.</p>
           <label class="problem-field">
             <span class="problem-field__label">Describe the problem</span>
             <textarea name="problem" placeholder="What is the car doing? A few details help us quote faster." rows="4"></textarea>
@@ -548,6 +549,6 @@
     </a>
   </div>
 
-  <script src="js/main.js?v=4"></script>
+  <script src="js/main.js?v=5"></script>
 </body>
 </html>

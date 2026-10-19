@@ -57,8 +57,29 @@ function initQuoteForm() {
   const form = document.getElementById('quoteForm');
   if (!form) return;
 
+  const phoneInput = form.querySelector('[name="phone"]');
+  const emailInput = form.querySelector('[name="email"]');
+
+  const clearContactValidity = () => {
+    phoneInput.setCustomValidity('');
+    emailInput.setCustomValidity('');
+  };
+  phoneInput.addEventListener('input', clearContactValidity);
+  emailInput.addEventListener('input', clearContactValidity);
+
   form.addEventListener('submit', async (e) => {
     e.preventDefault();
+
+    const phone = phoneInput.value.trim();
+    const email = emailInput.value.trim();
+    if (!phone && !email) {
+      const message = 'Enter a phone number or an email address.';
+      phoneInput.setCustomValidity(message);
+      emailInput.setCustomValidity(message);
+      form.reportValidity();
+      return;
+    }
+    clearContactValidity();
 
     const button = form.querySelector('.quote-form__submit');
     const data = Object.fromEntries(new FormData(form));
@@ -136,6 +157,7 @@ function showRequestSent(form, data) {
 
   const name = (data.name || '').trim();
   const phone = (data.phone || '').trim();
+  const email = (data.email || '').trim();
   const service = (data.service || '').trim();
   const problem = (data.problem || '').trim();
 
@@ -158,9 +180,10 @@ function showRequestSent(form, data) {
 
   const message = document.createElement('p');
   message.className = 'form-success__message';
-  message.textContent = name
-    ? `Thanks ${name}. We have your request and will call ${phone} shortly.`
-    : `We have your request and will call ${phone} shortly.`;
+  const followUp = phone
+    ? `We have your request and will call ${phone} shortly.`
+    : `We have your request and will email ${email} shortly.`;
+  message.textContent = name ? `Thanks ${name}. ${followUp}` : followUp;
 
   copy.append(title, message);
 

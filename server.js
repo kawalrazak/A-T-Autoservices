@@ -129,12 +129,16 @@ async function handleQuote(req, res) {
   const service = oneLine(payload.service, 80);
   const problem = String(payload.problem || '').replace(/\r/g, '').trim().slice(0, 2000);
 
-  if (!name || !phone || !SERVICES.includes(service)) {
-    sendJson(res, 400, { error: 'Name, phone, and service are required.' });
+  if (!name || !SERVICES.includes(service)) {
+    sendJson(res, 400, { error: 'Name and service are required.' });
     return;
   }
   if (email && !/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email)) {
     sendJson(res, 400, { error: 'Please enter a valid email address.' });
+    return;
+  }
+  if (!phone && !email) {
+    sendJson(res, 400, { error: 'Enter a phone number or an email address.' });
     return;
   }
 
@@ -142,7 +146,7 @@ async function handleQuote(req, res) {
     'New quote request from the A&T Auto Services website.',
     '',
     `Name: ${name}`,
-    `Phone: ${phone}`,
+    `Phone: ${phone || 'Not provided'}`,
     `Email: ${email || 'Not provided'}`,
     `Service: ${service}`,
     '',

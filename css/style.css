@@ -521,9 +521,11 @@ a:hover {
   box-shadow: 0 0 0 3px rgba(231, 181, 38, 0.22), 0 0 32px rgba(231, 181, 38, 0.28);
 }
 
-.quote-form__submit {
-  position: relative;
-  justify-self: start;
+.quote-form__hint {
+  margin: -4px 0 0;
+  color: var(--gold-light);
+  font-size: 0.9rem;
+  font-weight: 600;
 }
 
 @keyframes problem-glow {
