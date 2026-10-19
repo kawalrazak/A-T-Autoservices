@@ -1,6 +1,12 @@
-FROM nginx:alpine
-COPY index.html /usr/share/nginx/html/
-COPY css /usr/share/nginx/html/css/
-COPY js /usr/share/nginx/html/js/
-COPY images /usr/share/nginx/html/images/
+FROM node:22-alpine
+WORKDIR /app
+COPY package.json package-lock.json ./
+RUN npm ci --omit=dev
+COPY server.js index.html ./
+COPY css css
+COPY js js
+COPY images images
+ENV HOST=0.0.0.0
+ENV PORT=80
 EXPOSE 80
+CMD ["node", "server.js"]

@@ -1,0 +1,10 @@
+{
+  "name": "at-autoservices",
+  "private": true,
+  "scripts": {
+    "start": "node server.js"
+  },
+  "dependencies": {
+    "nodemailer": "^7.0.6"
+  }
+}

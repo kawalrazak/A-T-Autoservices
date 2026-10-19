@@ -57,23 +57,129 @@ function initQuoteForm() {
   const form = document.getElementById('quoteForm');
   if (!form) return;
 
-  form.addEventListener('submit', (e) => {
+  form.addEventListener('submit', async (e) => {
     e.preventDefault();
 
-    const formData = new FormData(form);
-    const data = Object.fromEntries(formData);
+    const button = form.querySelector('.quote-form__submit');
+    const data = Object.fromEntries(new FormData(form));
+    const originalLabel = button.textContent;
+    button.disabled = true;
+    button.textContent = 'Sending...';
+    clearFormNotice(form);
 
-    const existing = form.querySelector('.form-success');
-    if (existing) existing.remove();
-
-    const success = document.createElement('div');
-    success.className = 'form-success';
-    success.textContent = `Thanks ${data.name}! We'll get back to you shortly at ${data.phone}.`;
-    form.appendChild(success);
-    form.reset();
-
-    setTimeout(() => success.remove(), 6000);
+    try {
+      const response = await fetch('/api/quote', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify(data)
+      });
+      const result = await response.json().catch(() => ({}));
+      if (!response.ok) {
+        showRequestError(form, result.error);
+        return;
+      }
+      burstGlitter(button);
+      showRequestSent(form, data);
+      form.reset();
+    } catch {
+      showRequestError(form);
+    } finally {
+      button.disabled = false;
+      button.textContent = originalLabel;
+    }
   });
+}
+
+function clearFormNotice(form) {
+  const existing = form.querySelector('.form-success, .form-error');
+  if (existing) existing.remove();
+}
+
+function burstGlitter(anchor) {
+  if (!anchor || window.matchMedia('(prefers-reduced-motion: reduce)').matches) return;
+
+  const rect = anchor.getBoundingClientRect();
+  const layer = document.createElement('div');
+  layer.className = 'glitter-burst';
+  layer.style.left = `${rect.left + rect.width / 2}px`;
+  layer.style.top = `${rect.top + rect.height / 2}px`;
+
+  const colors = ['#F5D060', '#FFFFFF', '#E7B526', '#FFF4C2'];
+  for (let i = 0; i < 26; i++) {
+    const spark = document.createElement('span');
+    const angle = (Math.PI * 2 * i) / 26 + Math.random() * 0.35;
+    const distance = 46 + Math.random() * 78;
+    spark.style.setProperty('--x', `${Math.cos(angle) * distance}px`);
+    spark.style.setProperty('--y', `${Math.sin(angle) * distance}px`);
+    spark.style.background = colors[i % colors.length];
+    spark.style.color = colors[i % colors.length];
+    spark.style.animationDelay = `${Math.random() * 70}ms`;
+    if (i % 3 === 0) spark.classList.add('is-diamond');
+    layer.appendChild(spark);
+  }
+
+  document.body.appendChild(layer);
+  setTimeout(() => layer.remove(), 1000);
+}
+
+function showRequestError(form, message) {
+  clearFormNotice(form);
+  const panel = document.createElement('div');
+  panel.className = 'form-error';
+  panel.setAttribute('role', 'alert');
+  panel.textContent = message || 'We could not send your request. Please call 0402 807 082 or try again.';
+  form.appendChild(panel);
+}
+
+function showRequestSent(form, data) {
+  clearFormNotice(form);
+
+  const name = (data.name || '').trim();
+  const phone = (data.phone || '').trim();
+  const service = (data.service || '').trim();
+  const problem = (data.problem || '').trim();
+
+  const panel = document.createElement('div');
+  panel.className = 'form-success';
+  panel.setAttribute('role', 'status');
+  panel.setAttribute('aria-live', 'polite');
+
+  const badge = document.createElement('div');
+  badge.className = 'form-success__badge';
+  badge.setAttribute('aria-hidden', 'true');
+  badge.textContent = '✓';
+
+  const copy = document.createElement('div');
+  copy.className = 'form-success__copy';
+
+  const title = document.createElement('p');
+  title.className = 'form-success__title';
+  title.textContent = 'Request sent';
+
+  const message = document.createElement('p');
+  message.className = 'form-success__message';
+  message.textContent = name
+    ? `Thanks ${name}. We have your request and will call ${phone} shortly.`
+    : `We have your request and will call ${phone} shortly.`;
+
+  copy.append(title, message);
+
+  if (service || problem) {
+    const detail = document.createElement('p');
+    detail.className = 'form-success__detail';
+    const bits = [];
+    if (service) bits.push(`Service: ${service}`);
+    if (problem) bits.push(`Problem: ${problem}`);
+    detail.textContent = bits.join(' · ');
+    copy.appendChild(detail);
+  }
+
+  panel.append(badge, copy);
+  form.appendChild(panel);
+
+  setTimeout(() => {
+    if (panel.isConnected) panel.remove();
+  }, 12000);
 }
 
 // Scroll Animations

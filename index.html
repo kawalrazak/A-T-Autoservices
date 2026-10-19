@@ -98,7 +98,11 @@
             <option>Mechanical Repair</option>
             <option>Roadworthy</option>
           </select>
-          <button type="submit" class="btn btn--primary">Send Request</button>
+          <label class="problem-field">
+            <span class="problem-field__label">Describe the problem</span>
+            <textarea name="problem" placeholder="What is the car doing? A few details help us quote faster." rows="4"></textarea>
+          </label>
+          <button type="submit" class="btn btn--primary quote-form__submit">Send Request</button>
         </form>
       </div>
     </div>
