@@ -91,10 +91,21 @@ function readBody(req) {
   });
 }
 
+function clientIp(req) {
+  const forwarded = req.headers['x-forwarded-for'];
+  if (typeof forwarded === 'string' && forwarded.trim()) {
+    const first = forwarded.split(',')[0].trim();
+    if (first) return first.slice(0, 80);
+  }
+  const real = req.headers['x-real-ip'];
+  if (typeof real === 'string' && real.trim()) return real.trim().slice(0, 80);
+  return req.socket.remoteAddress || 'local';
+}
+
 function allowSend(ip) {
   const now = Date.now();
   const stamps = (recentSends.get(ip) || []).filter((time) => now - time < 10 * 60 * 1000);
-  if (stamps.length >= 5) {
+  if (stamps.length >= 10) {
     recentSends.set(ip, stamps);
     return false;
   }
@@ -103,15 +114,14 @@ function allowSend(ip) {
   return true;
 }
 
+function forgetLastSend(ip) {
+  const stamps = recentSends.get(ip);
+  if (stamps && stamps.length) stamps.pop();
+}
+
 async function handleQuote(req, res) {
   if (!process.env.SMTP_USER || !process.env.SMTP_PASS) {
     sendJson(res, 500, { error: 'Email is not configured.' });
-    return;
-  }
-
-  const ip = req.socket.remoteAddress || 'local';
-  if (!allowSend(ip)) {
-    sendJson(res, 429, { error: 'Too many requests. Please call the workshop.' });
     return;
   }
 
@@ -142,6 +152,12 @@ async function handleQuote(req, res) {
     return;
   }
 
+  const ip = clientIp(req);
+  if (!allowSend(ip)) {
+    sendJson(res, 429, { error: 'Too many requests. Please call the workshop.' });
+    return;
+  }
+
   const lines = [
     'New quote request from the A&T Auto Services website.',
     '',
@@ -163,6 +179,7 @@ async function handleQuote(req, res) {
       text: lines.join('\n')
     });
   } catch (error) {
+    forgetLastSend(ip);
     console.error('Quote email failed:', error.message);
     sendJson(res, 502, { error: 'We could not send your request. Please call the workshop.' });
     return;
