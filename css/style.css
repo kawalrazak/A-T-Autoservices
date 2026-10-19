@@ -457,10 +457,16 @@ a:hover {
 }
 
 .quote-form {
+  display: flex;
+  flex-direction: column;
+  align-items: stretch;
+  gap: 14px;
+}
+
+.quote-form__fields {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+  grid-template-columns: repeat(4, minmax(0, 1fr));
   gap: 12px;
-  align-items: end;
 }
 
 .quote-form input,
@@ -477,15 +483,17 @@ a:hover {
 }
 
 .quote-form textarea {
-  min-height: 110px;
+  display: block;
+  width: 100%;
+  min-height: 120px;
   resize: vertical;
 }
 
 .problem-field {
-  grid-column: 1 / -1;
   display: flex;
   flex-direction: column;
   gap: 8px;
+  width: 100%;
   padding: 14px;
   border-radius: var(--radius);
   background: linear-gradient(180deg, rgba(231, 181, 38, 0.16), rgba(231, 181, 38, 0.04));
@@ -1328,6 +1336,10 @@ a:hover {
     height: 220px;
   }
 
+  .quote-form__fields {
+    grid-template-columns: 1fr 1fr;
+  }
+
   .footer__grid {
     grid-template-columns: 1fr 1fr;
   }
@@ -1551,7 +1563,7 @@ a:hover {
     gap: 32px;
   }
 
-  .quote-form {
+  .quote-form__fields {
     grid-template-columns: 1fr;
   }
 

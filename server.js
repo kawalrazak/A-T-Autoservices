@@ -182,7 +182,12 @@ function serveStatic(req, res) {
       res.end('Not found');
       return;
     }
-    res.writeHead(200, { 'Content-Type': mime[path.extname(file).toLowerCase()] || 'application/octet-stream' });
+    const type = mime[path.extname(file).toLowerCase()] || 'application/octet-stream';
+    const headers = { 'Content-Type': type };
+    if (type.startsWith('text/html') || type.includes('css') || type.includes('javascript')) {
+      headers['Cache-Control'] = 'no-cache';
+    }
+    res.writeHead(200, headers);
     res.end(data);
   });
 }
