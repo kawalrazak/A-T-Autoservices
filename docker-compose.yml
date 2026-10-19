@@ -13,3 +13,11 @@ services:
       SMTP_USER: ${SMTP_USER}
       SMTP_PASS: ${SMTP_PASS}
       QUOTE_TO: ${QUOTE_TO:-a.tautoservices3@gmail.com}
+    networks:
+      - default
+      - proxy
+
+networks:
+  proxy:
+    external: true
+    name: orcait_default
